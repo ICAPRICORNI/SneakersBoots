@@ -694,21 +694,26 @@ ol {
 	display: block;
 }
 
-.shop__sidebar__categories ul,
+.shop__sidebar__categories ul {
+    height: 160px;
+}
 .shop__sidebar__price ul,
-.shop__sidebar__brand ul {
+.shop__sidebar__brand ul,
+.shop__sidebar__size ul{
 	height: 225px;
 }
 
 .shop__sidebar__categories ul li,
 .shop__sidebar__price ul li,
-.shop__sidebar__brand ul li {
+.shop__sidebar__brand ul li,
+.shop__sidebar__size ul li{
 	list-style: none;
 }
 
 .shop__sidebar__categories ul li a,
 .shop__sidebar__price ul li a,
-.shop__sidebar__brand ul li a {
+.shop__sidebar__brand ul li a,
+.shop__sidebar__size ul li a {
 	color: #b7b7b7;
 	font-size: 15px;
 	line-height: 32px;
@@ -719,7 +724,8 @@ ol {
 
 .shop__sidebar__categories ul li a:hover,
 .shop__sidebar__price ul li a:hover,
-.shop__sidebar__brand ul li a:hover {
+.shop__sidebar__brand ul li a:hover,
+.shop__sidebar__size ul li a:hover{
 	color: #111111;
 }
 
@@ -731,32 +737,8 @@ ol {
 	height: auto;
 }
 
-.shop__sidebar__size {
-	padding-top: 15px;
-}
-
-.shop__sidebar__size label {
-	color: #111111;
-	font-size: 15px;
-	font-weight: 700;
-	text-transform: uppercase;
-	display: inline-block;
-	border: 1px solid #e5e5e5;
-	padding: 6px 25px;
-	margin-bottom: 10px;
-	margin-right: 5px;
-	cursor: pointer;
-}
-
-.shop__sidebar__size label.active {
-	background: #111111;
-	color: #ffffff;
-	border-color: #111111;
-}
-
-.shop__sidebar__size label input {
-	position: absolute;
-	visibility: hidden;
+.shop__sidebar__size ul {
+	height: auto;
 }
 
 .shop__sidebar__accordion .card-heading a:after,
@@ -795,7 +777,7 @@ ol {
 
 .shop__product__option__right {
 	text-align: right;
-	margin-right: 178px;
+	margin-right: 139px;
 }
 
 .shop__product__option__right p {
@@ -1016,7 +998,7 @@ ol {
 }
 
 .product__details__text p {
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 }
 
 .product__details__option {

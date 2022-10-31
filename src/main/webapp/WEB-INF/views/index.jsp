@@ -39,12 +39,12 @@
                 <!-- <a href="/accounts/profile"><i class="fa fa-user-o" style="margin-right: 10px"></i>ICAPRICORNI</a> -->
                 <!-- <a href="/accounts/sign_out"><i class="fa fa-sign-out" style="margin-right: 10px"></i>Вийти</a> -->
 
-                <a href="./log-in.html"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
-                <a href="./sign-up.html"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
+                <a href="${pageContext.request.contextPath}/log-in"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
+                <a href="${pageContext.request.contextPath}/sign-up"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
             </div>
         </div>
         <div class="offcanvas__nav__option">
-            <a href="./shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+            <a href="${pageContext.request.contextPath}/shopping-cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -60,8 +60,8 @@
                         <!-- <a href="/accounts/profile"><i class="fa fa-user-o" style="margin-right: 10px"></i>ICAPRICORNI</a> -->
                         <!-- <a href="/accounts/sign_out"><i class="fa fa-sign-out" style="margin-right: 10px"></i>Вийти</a> -->
 
-                        <a href="./log-in.html"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
-                        <a href="./sign-up.html"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
+                        <a href="${pageContext.request.contextPath}/log-in"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
+                        <a href="${pageContext.request.contextPath}/sign-up"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
                     </div>
                 </div>
             </div>
@@ -70,21 +70,21 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo1.png" alt=""></a>
+                        <a href="${pageContext.request.contextPath}/index"><img src="img/logo1.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="./index.html">Головна</a></li>
-                            <li><a href="./shop.html">Каталог</a></li>
-                            <li><a href="./contact.html">Контакти</a></li>
+                            <li><a href="${pageContext.request.contextPath}/index">Головна</a></li>
+                            <li><a href="${pageContext.request.contextPath}/shop">Каталог</a></li>
+                            <li><a href="${pageContext.request.contextPath}/contact">Контакти</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="./shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="${pageContext.request.contextPath}/shopping-cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">₴0.00</div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="product__item__text">
                                 	<h6>Multi-pocket Chest Bag</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Diagonal Textured Cap</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Ankle Boots</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Basic Flowing Scarf</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴67.24</h5>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Ankle Boots</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴98.49</h5>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴49.66</h5>
                                 </div>
                             </div>
@@ -228,7 +228,7 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Basic Flowing Scarf</h6>
-                                    <a href="./shop-details.html" class="add-cart">+ Додати до кошика</a>
+                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
                                     <h5>₴26.28</h5>
                                 </div>
                             </div>
@@ -244,9 +244,9 @@
     <div class="footer">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Головна</a></li>
-                <li class="nav-item"><a href="./shop.html" class="nav-link px-2 text-muted">Каталог</a></li>
-                <li class="nav-item"><a href="./contact.html" class="nav-link px-2 text-muted">Контакти</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/index" class="nav-link px-2 text-muted">Головна</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/shop" class="nav-link px-2 text-muted">Каталог</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/contact" class="nav-link px-2 text-muted">Контакти</a></li>
             </ul>
             <p class="text-center text-muted">&copy; 2022 SneakersBoots</p>
         </footer>
