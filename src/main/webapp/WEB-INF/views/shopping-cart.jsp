@@ -135,7 +135,6 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>T-shirt Contrast Pocket</h6>
-                                            <h5>₴98.49</h5>
                                         </div>
                                     </td>
                                     <td class="cart__price">₴ 30.00</td>
@@ -148,7 +147,6 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>Diagonal Textured Cap</h6>
-                                            <h5>₴98.49</h5>
                                         </div>
                                     </td>
                                     <td class="cart__price">₴ 32.50</td>
@@ -161,7 +159,6 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>Basic Flowing Scarf</h6>
-                                            <h5>₴98.49</h5>
                                         </div>
                                     </td>
                                     <td class="cart__price">₴ 47.00</td>
@@ -174,7 +171,6 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>Basic Flowing Scarf</h6>
-                                            <h5>₴98.49</h5>
                                         </div>
                                     </td>
                                     <td class="cart__price">₴ 30.00</td>

@@ -172,33 +172,18 @@
                                 <ul class="checkout__total__all">
                                     <li>Разом <span>₴750.99</span></li>
                                 </ul>
-                                <form>
-                                    <h5 style="margin-bottom: 5px;">Варіанти оплати</h5>
+                                <h5 style="margin-bottom: 10px;">Варіанти оплати</h5>
+                                <div class="form-group">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                         <label class="form-check-label" for="flexRadioDefault1">Готівка</label>
                                     </div>
-                                    <div class="form-check" style="margin-bottom: 10px;">
+                                    <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                                         <label class="form-check-label" for="flexRadioDefault2">Карта</label>
                                     </div>
-                                </form>
-                                <form>
-                                    <h5 style="margin-bottom: 5px;">Спосіб отримання товару</h5>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">Самовивіз з магазину</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                        <label class="form-check-label" for="flexRadioDefault2">Нова пошта</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                        <label class="form-check-label" for="flexRadioDefault2">Кур'єр</label>
-                                    </div>
-                                    <button type="submit" class="site-btn">ЗАМОВИТИ</button>
-                                </form>
+                                </div>
+                                <button type="submit" class="site-btn">ЗАМОВИТИ</button>
                             </div>
                         </div>
                     </div>
