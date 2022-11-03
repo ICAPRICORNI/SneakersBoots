@@ -6,7 +6,7 @@ CREATE TABLE categories
 
 CREATE TABLE products_categories
 (
-    user_id     BIGINT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    product_id  BIGINT NOT NULL REFERENCES products (id) ON DELETE CASCADE,
     category_id BIGINT NOT NULL REFERENCES categories (id) ON DELETE CASCADE,
-    PRIMARY KEY (user_id, category_id)
+    PRIMARY KEY (product_id, category_id)
 )
