@@ -1,17 +1,20 @@
 package com.sneakersboots.sneakersboots.controllers;
 
+import com.sneakersboots.sneakersboots.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 @Controller
+@RequiredArgsConstructor
 public class ShopDetailsController {
-    @GetMapping("/shop-details")
-    public ModelAndView openHome(HttpServletRequest req, HttpServletResponse resp) {
+    private final ProductService productService;
+    @GetMapping("/products/{id}")
+    public ModelAndView openHome(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView("shop-details");
+        mv.addObject("productDto", productService.getProduct(id));
         return mv;
     }
 }

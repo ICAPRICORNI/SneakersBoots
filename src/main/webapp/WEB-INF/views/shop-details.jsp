@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -52,46 +53,7 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="header__top__links">
-                        <!-- <a href="./log-in.html"><i class="fa fa-user-o" style="margin-right: 10px"></i>ICAPRICORNI</a> -->
-                        <!-- <a href="./sign-up.html"><i class="fa fa-sign-out" style="margin-right: 10px"></i>Вийти</a> -->
-
-                        <a href="${pageContext.request.contextPath}/log-in"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
-                        <a href="${pageContext.request.contextPath}/sign-up"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="${pageContext.request.contextPath}/index"><img src="img/logo1.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="${pageContext.request.contextPath}/index">Головна</a></li>
-                            <li><a href="${pageContext.request.contextPath}/shop">Каталог</a></li>
-                            <li><a href="${pageContext.request.contextPath}/contact">Контакти</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="${pageContext.request.contextPath}/shopping-cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">₴0.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
-    </header>
+    <jsp:include page="_header.jsp"/>
     <!-- Header Section End -->
 
     <!-- Shop Details Section Begin -->
@@ -104,15 +66,11 @@
 				    <li data-target="#carouselControls" data-slide-to="2"></li>
 				</ol>
 			  <div class="carousel-inner">
-			    <div class="carousel-item active" data-interval="10000">
-			      <img src="img/shop-details/product-big-2.png" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item" data-interval="10000">
-			      <img src="img/shop-details/product-big-3.png" class="d-block w-100" alt="...">
-			    </div>
-			    <div class="carousel-item" data-interval="10000">
-			      <img src="img/shop-details/product-big-4.png" class="d-block w-100" alt="...">
-			    </div>
+                  <c:forEach items ="${requestScope.productDto.pictures}" var="picture" varStatus="status">
+                      <div class="${status.first ? 'carousel-item active' : 'carousel-item'}" data-interval="10000">
+                          <img src="data:image/jpg;base64,${picture}" class="d-block w-100" alt="...">
+                      </div>
+                  </c:forEach>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -130,28 +88,16 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Hooded thermal anorak</h4>
-                            <h3>₴270.00 <span>70.00</span></h3>
-                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                            with placket.</p>
+                            <h4>${requestScope.productDto.name}</h4>
+                            <h3>₴${requestScope.productDto.price} <c:if test="${not empty requestScope.productDto.oldPrice}"><span>₴${requestScope.productDto.oldPrice}</span></c:if></h3>
+                            <p>${requestScope.productDto.description}</p>
                            <form>
                                 <div class="form-check form-check-inline">
                                     <span style="margin-bottom: 2px;">Розмір:</span>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">36</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">37</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">38</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">39</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">40</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">41</label>
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" style="margin-left: 10px;">
-                                    <label class="form-check-label" for="inlineRadio1">42</label>
+                                    <c:forEach items ="${requestScope.productDto.sizes}" var="size">
+                                        <input class="form-check-input" type="radio" name="size" id="${size.id}" value="${size.id}" style="margin-left: 10px;">
+                                        <label class="form-check-label" for="${size.id}">${size.name}</label>
+                                    </c:forEach>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-dark" style="margin-top: 30px;">Додати у кошик</button>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -52,46 +53,7 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="header__top__links">
-                        <!-- <a href="/accounts/profile"><i class="fa fa-user-o" style="margin-right: 10px"></i>ICAPRICORNI</a> -->
-                        <!-- <a href="/accounts/sign_out"><i class="fa fa-sign-out" style="margin-right: 10px"></i>Вийти</a> -->
-
-                        <a href="${pageContext.request.contextPath}/log-in"><i class="fa fa-user-o" style="margin-right: 10px"></i>Вхід</a>
-                        <a href="${pageContext.request.contextPath}/sign-up"><i class="fa fa-user-plus" style="margin-right: 10px"></i>Реєстрація</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="${pageContext.request.contextPath}/index"><img src="img/logo1.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="${pageContext.request.contextPath}/index">Головна</a></li>
-                            <li><a href="${pageContext.request.contextPath}/shop">Каталог</a></li>
-                            <li><a href="${pageContext.request.contextPath}/contact">Контакти</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="${pageContext.request.contextPath}/shopping-cart"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">₴0.00</div>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
-        </div>
-    </header>
+    <jsp:include page="_header.jsp"/>
     <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
@@ -128,11 +90,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">Чоловіче взуття</a></li>
-                                                    <li><a href="#">Жіноче взуття</a></li>
-                                                    <li><a href="#">Кросівки</a></li>
-                                                    <li><a href="#">Кеди</a></li>
-                                                    <li><a href="#">Черевики</a></li>
+                                                    <c:forEach items ="${requestScope.shopFilters.categories}" var="category">
+                                                        <li><a href="${pageContext.request.contextPath}/shop?page=1&limit=${requestScope.page.limit}&categoryId=${category.id}">${category.name}</a></li>
+                                                    </c:forEach>
                                                 </ul>
                                             </div>
                                         </div>
@@ -146,12 +106,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
-                                                    <li><a href="#">Adidas</a></li>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">Puma</a></li>
-                                                    <li><a href="#">New Balance</a></li>
-                                                    <li><a href="#">Timberland</a></li>
-                                                    <li><a href="#">Converse</a></li>
+                                                    <c:forEach items ="${requestScope.shopFilters.brands}" var="brand">
+                                                        <li><a href="${pageContext.request.contextPath}/shop?page=1&limit=${requestScope.page.limit}&brandId=${brand.id}">${brand.name}</a></li>
+                                                    </c:forEach>
                                                 </ul>
                                             </div>
                                         </div>
@@ -183,12 +140,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <ul>
-                                                    <li><a href="#">37</a></li>
-                                                    <li><a href="#">38</a></li>
-                                                    <li><a href="#">39</a></li>
-                                                    <li><a href="#">40</a></li>
-                                                    <li><a href="#">41</a></li>
-                                                    <li><a href="#">42</a></li>
+                                                    <c:forEach items ="${requestScope.shopFilters.sizes}" var="size">
+                                                        <li><a href="${pageContext.request.contextPath}/shop?page=1&limit=${requestScope.page.limit}&sizeId=${size.id}">${size.name}</a></li>
+                                                    </c:forEach>
                                                 </ul>
                                             </div>
                                         </div>
@@ -200,86 +154,38 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                                    <span class="label">Sale</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴43.48</h5>
+                        <c:forEach items ="${requestScope.page.products}" var="product">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,${product.picture}">
+                                        <c:if test="${product.status == 'DISCOUNT'}"><span class="label">Sale</span></c:if>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6>${product.name}</h6>
+                                        <a href="${pageContext.request.contextPath}/products/${product.id}" class="add-cart">+ Додати до кошика</a>
+                                        <h5>₴${product.price}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Diagonal Textured Cap</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴60.9</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
-                                    <span class="label">Sale</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Ankle Boots</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴98.49</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴49.66</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Basic Flowing Scarf</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴26.28</h5>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <nav aria-label="Page navigation example">
 							  <ul class="pagination pagination-lg justify-content-center">
-							    <li class="page-item disabled">
-							      <a class="page-link" href="#" aria-label="Previous">
+                                  <li class="page-item <c:if test="${not requestScope.page.hasPreviousPage}">disabled</c:if>">
+							      <a class="page-link" href="${pageContext.request.contextPath}/shop?page=${page.page-1}&limit=${requestScope.page.limit}
+<c:if test="${not empty requestScope.filter.brandId}">&brandId=${requestScope.filter.brandId}</c:if>
+<c:if test="${not empty requestScope.filter.categoryId}">&categoryId=${requestScope.filter.categoryId}</c:if>
+<c:if test="${not empty requestScope.filter.sizeId}">&sizeId=${requestScope.filter.sizeId}</c:if>" aria-label="Previous">
 							        <span aria-hidden="true">&laquo;</span>
 							      </a>
 							    </li>
-							    <li class="page-item">
-							      <a class="page-link" href="#" aria-label="Next">
+							    <li class="page-item <c:if test="${not requestScope.page.hasNextPage}">disabled</c:if>">
+							      <a class="page-link" href="${pageContext.request.contextPath}/shop?page=${page.page+1}&limit=${requestScope.page.limit}
+<c:if test="${not empty requestScope.filter.brandId}">&brandId=${requestScope.filter.brandId}</c:if>
+<c:if test="${not empty requestScope.filter.categoryId}">&categoryId=${requestScope.filter.categoryId}</c:if>
+<c:if test="${not empty requestScope.filter.sizeId}">&sizeId=${requestScope.filter.sizeId}</c:if>" aria-label="Next">
 							        <span aria-hidden="true">&raquo;</span>
 							      </a>
 							    </li>
