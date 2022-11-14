@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -81,119 +82,39 @@
         				<h2>Новинки</h2>
 					</div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                	<h6>Multi-pocket Chest Bag</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
+                        <c:forEach items="${requestScope.products.newProducts}" var="product">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,${product.picture}">
+                                        <span class="label">Новинка</span>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6>${product.name}</h6>
+                                        <a href="${pageContext.request.contextPath}/products/${product.id}" class="add-cart">+ Додати до кошика</a>
+                                        <h5>${product.price}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Diagonal Textured Cap</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Ankle Boots</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
-                                	<span class="label">Новинка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Basic Flowing Scarf</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴67.24</h5>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                     <div class="filter__controls">
         				<h2>Знижки</h2>
 					</div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-12.jpg">
-                                    <span class="label">Знижка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Ankle Boots</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴98.49</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-13.jpg">
-                                	<span class="label">Знижка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴49.66</h5>
+                        <c:forEach items="${requestScope.products.discountProducts}" var="product">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item sale">
+                                    <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,${product.picture}">
+                                        <span class="label">Знижка</span>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <h6>${product.name}</h6>
+                                        <a href="${pageContext.request.contextPath}/products/${product.id}" class="add-cart">+ Додати до кошика</a>
+                                        <h5>${product.price}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-14.jpg">
-                                	<span class="label">Знижка</span>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Basic Flowing Scarf</h6>
-                                    <a href="${pageContext.request.contextPath}/shop-details" class="add-cart">+ Додати до кошика</a>
-                                    <h5>₴26.28</h5>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

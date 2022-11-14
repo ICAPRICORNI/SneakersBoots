@@ -4,6 +4,7 @@ import com.sneakersboots.sneakersboots.meta.ProductStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -14,8 +15,11 @@ import java.util.List;
 @Table(name = "products")
 @Data
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class Product {
     @Id
+    @SequenceGenerator(name = "productSeq", sequenceName = "products_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "productSeq")
     private Long id;
     private String name;
     private String description;
@@ -24,6 +28,7 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private ProductStatus status;
     @CreatedDate
+    @Column(name = "created_at")
     private Instant createdAt;
     @ManyToOne
     @JoinColumn(name = "brand_id")

@@ -11,6 +11,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ProductPicture {
     @Id
+    @SequenceGenerator(name = "pictureSeq", sequenceName = "pictures_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "pictureSeq")
     private Long id;
     private String name;
     @ManyToOne

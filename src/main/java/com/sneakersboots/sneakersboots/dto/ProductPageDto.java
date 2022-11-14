@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-
 public class ProductPageDto {
     List<ProductShortDto> products = new ArrayList<>();
     boolean hasNextPage;

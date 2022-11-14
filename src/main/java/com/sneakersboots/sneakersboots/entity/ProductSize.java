@@ -11,6 +11,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ProductSize {
     @Id
+    @SequenceGenerator(name = "sizeSeq", sequenceName = "sizes_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "sizeSeq")
     private Long id;
     private String name;
 }
