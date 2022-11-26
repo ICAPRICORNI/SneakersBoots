@@ -401,13 +401,13 @@ ol {
 -----------------------*/
 
 .container-sm {
-	height: 650px;
+	height: hidden;
 	width: 400px;
 	margin-bottom: 25px;
 }
 
 .carousel-item img {
-	height: 650px;
+	overflow: hidden;
 }
 
 
@@ -693,10 +693,7 @@ ol {
 	text-transform: uppercase;
 	display: block;
 }
-
-.shop__sidebar__categories ul {
-    height: 160px;
-}
+.shop__sidebar__categories ul,
 .shop__sidebar__price ul,
 .shop__sidebar__brand ul,
 .shop__sidebar__size ul{
@@ -728,7 +725,9 @@ ol {
 .shop__sidebar__size ul li a:hover{
 	color: #111111;
 }
-
+.shop__sidebar__categories ul {
+    height: auto;
+}
 .shop__sidebar__brand ul {
 	height: auto;
 }
@@ -1277,8 +1276,8 @@ ol {
 }
 
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic {
-	float: left;
-	margin-right: 30px;
+	float: none;
+	margin-right: 0;
 }
 
 .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__text {
@@ -1667,8 +1666,8 @@ ol {
         border: 2px solid silver;
         border-radius: 15px;
         margin: 20px auto;
-        margin-top: 180px;
-        margin-bottom: 175px;
+        margin-top: 100px;
+        margin-bottom: 100px;
         padding: 20px 40px 10px 40px;
         width: 60%;
         color: black;

@@ -148,6 +148,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a href="${pageContext.request.contextPath}/products/create" type="button" class="btn btn-dark">Додати товар</a>
                             </div>
                         </div>
                     </div>
