@@ -59,29 +59,29 @@
     <div class="section">
         <div class="container">
             <div class="row text-center">
-                <form id="form1" class="form-auth" action="/accounts/sign_up" method="POST" onsubmit="return false">
+                <form id="form1" class="form-auth" action="${pageContext.request.contextPath}/create-user" method="POST" onsubmit="return false">
                     <div class="form-group">
                         <label for="login" class="form-label">Логін:</label>
                         <input type="text" id="login" name="login" class="form-control"
-                        placeholder="Введіть логін" required>
+                        placeholder="Введіть логін" value="${user.login}" required>
                         <span id ="login_err" class="error"></span>
                     </div>
                     <div class="form-group">
                         <label for="pass1" class="form-label">Пароль:</label>
                         <input type="password" id="pass1" name="pass1" class="form-control"
-                        placeholder="Введіть пароль" required>
+                        placeholder="Введіть пароль" value="${user.password}" required>
                         <span id ="pass1_err" class="error"></span>
                     </div>
                     <div class="form-group">
                         <label for="pass2" class="form-label">Підтвердіть пароль:</label>
                         <input type="password" id="pass2" name="pass2" class="form-control"
-                        placeholder="Підтвердіть пароль" required>
+                        placeholder="Підтвердіть пароль" value="${user.passwordConfirm}" required>
                         <span id ="pass2_err" class="error"></span>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">E-mail:</label>
                         <input type="email" id="email" name="email" class="form-control"
-                            placeholder="Введіть E-Mail" required>
+                            placeholder="Введіть E-Mail" value="${user.email}" required>
                         <span id ="email_err" class="error"></span>
                     </div>
                     <p>

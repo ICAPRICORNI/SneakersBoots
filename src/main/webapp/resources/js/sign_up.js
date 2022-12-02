@@ -13,27 +13,12 @@ $(document).ready(() =>{
         let loginX = $('#login').val();
         console.log('loginX -> ' + loginX);
 
-        let loginRe = /^[a-zA-Z][a-zA-Z0-9_\-\.]{4,15}$/;
-        if (loginRe.test(loginX)){
-            //перевірка зайнятості логіну
-            $.ajax({
-                url: '/accounts/ajax_reg',
-                data: 'login=' + loginX,
-                success: (result)=>{
-                    console.log('AJAX -> OK');
-                    console.log(result.message);
-                    if (result.message === 'зайнятий'){
-                        $('#login_err').text('Логін зайнятий!');
-                        result1 = false;
-                    } else {
-                        $('#login_err').text('');
-                        result1 = true;
-                    }
-                }
-            });
-        }else{
+        let loginRe = /^[a-zA-Z][a-zA-Z0-9_ \-\.]{4,15}$/;
+        if (!loginRe.test(loginX)){
             $('#login_err').text('Помилка формату логіна! Дозволений формат: a-z, A-Z, 0-9, _, -, .');
             result1 = false;
+        } else {
+            result1 = true;
         }
     });
 
@@ -74,27 +59,12 @@ $(document).ready(() =>{
         let emailX = $('#email').val();
         console.log('emailX -> ' +emailX);
 
-        let emailRe = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
-        if (emailRe.test(emailX)){
-            //перевірка зайнятості email
-            $.ajax({
-                url: '/accounts/ajax_reg_email',
-                data: 'email=' + emailX,
-                success: (result)=>{
-                    console.log('AJAX email -> OK');
-                    console.log(result.message);
-                    if (result.message === 'зайнятий'){
-                        $('#email_err').text('E-mail зайнятий!');
-                        result4 = false;
-                    } else {
-                        $('#email_err').text('');
-                        result4 = true;
-                    }
-                }
-            });
-        }else{
+        let emailRe = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        if (!emailRe.test(emailX)){
             $('#email_err').text('Помилка формату e-mail!');
             result4 = false;
+        } else {
+            result4 = true;
         }
     });
 

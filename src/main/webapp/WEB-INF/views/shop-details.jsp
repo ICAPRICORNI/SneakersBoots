@@ -100,7 +100,7 @@
                                     </c:forEach>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-dark" style="margin-top: 30px;">Додати у кошик</button>
+                                        <button type="submit" class="btn btn-dark" style="margin-top: 30px;"><a href="${pageContext.request.contextPath}/ad-to-cart">Додати у кошик</a></button>
                                 </div>
                            </form>
                         </div>
