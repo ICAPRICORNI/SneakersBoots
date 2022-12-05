@@ -3,6 +3,7 @@ package com.sneakersboots.sneakersboots.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sneakersboots.sneakersboots.security.UserDetailsServiceImpl;
 import com.sneakersboots.sneakersboots.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

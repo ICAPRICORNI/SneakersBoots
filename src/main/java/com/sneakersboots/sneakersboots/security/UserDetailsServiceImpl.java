@@ -4,6 +4,7 @@ import com.sneakersboots.sneakersboots.entity.Role;
 import com.sneakersboots.sneakersboots.entity.User;
 import com.sneakersboots.sneakersboots.repository.UserRepository;
 import javassist.NotFoundException;
+import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,6 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
     private UserRepository userRepository;
 
@@ -26,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 -> new NotFoundException("user not found with name " + username));
         if (user == null) throw new UsernameNotFoundException(username);
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole().toString()));
+        grantedAuthorities.add(new SimpleGrantedAuthority(user.getRoles().toString()));
         return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), grantedAuthorities);
     }
 }

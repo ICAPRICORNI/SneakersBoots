@@ -7,7 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class UserDto {
     private String login;
-    private String password;
-    private String passwordConfirm;
+    private String pass1;
+    private String pass2;
     private String email;
 }
