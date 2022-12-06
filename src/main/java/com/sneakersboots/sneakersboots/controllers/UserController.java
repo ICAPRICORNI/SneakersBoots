@@ -16,21 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    private final ProductService productService;
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
-    }
-
-    @PostMapping("/create-user")
-    public ModelAndView createUser(@ModelAttribute("user") UserDto userDto, HttpServletRequest req, HttpServletResponse resp) {
-        User user = new User();
-        user.setEmail(userDto.getEmail());
-        user.setName(userDto.getLogin());
-        user.setPassword(userDto.getPass1());
-        userService.createUser(user, req);
-        ModelAndView mv = new ModelAndView("index");
-        mv.addObject("products", productService.getAllForHome());
-        return mv;
     }
 }

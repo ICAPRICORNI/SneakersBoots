@@ -59,7 +59,7 @@
     <div class="section">
         <div class="container">
             <div class="row text-center">
-                <form id="form1" class="form-auth" action="${pageContext.request.contextPath}/create-user" method="POST" onsubmit="return false">
+                <form id="form1" class="form-auth" action="${pageContext.request.contextPath}/create-user" method="POST">
                     <div class="form-group">
                         <label for="login" class="form-label">Логін:</label>
                         <input type="text" id="login" name="login" class="form-control"
@@ -67,14 +67,14 @@
                         <span id ="login_err" class="error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="pass1" class="form-label">Пароль:</label>
-                        <input type="password" id="pass1" name="pass1" class="form-control"
+                        <label for="password" class="form-label">Пароль:</label>
+                        <input type="password" id="password" name="password" class="form-control"
                         placeholder="Введіть пароль" value="${user.password}" required>
                         <span id ="pass1_err" class="error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="pass2" class="form-label">Підтвердіть пароль:</label>
-                        <input type="password" id="pass2" name="pass2" class="form-control"
+                        <label for="passwordConfirm" class="form-label">Підтвердіть пароль:</label>
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control"
                         placeholder="Підтвердіть пароль" value="${user.passwordConfirm}" required>
                         <span id ="pass2_err" class="error"></span>
                     </div>
@@ -117,6 +117,5 @@
     <script src="${pageContext.request.contextPath}/resources/js/mixitup.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/sign_up.js"></script>
 </body>
 </html>

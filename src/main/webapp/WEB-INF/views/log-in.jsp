@@ -59,19 +59,19 @@
     <div class="section">
         <div class="container">
             <div class="row text-center">
-                <form id="form2" class="form-auth" action="/accounts/sign_in" method="post">
+                <form id="form2" class="form-auth" action="${pageContext.request.contextPath}/login" method="post">
                     <div class="form-group">
-                        <label for="login" class="form-label">Логін:</label>
-                        <input type="text" id="login" name="login" class="form-control"
+                        <label for="username" class="form-label">Логін:</label>
+                        <input type="text" id="username" name="username" class="form-control" value="${user.name}"
                         placeholder="Введіть логін" required>
                     </div>
                     <div class="form-group">
-                        <label for="pass1" class="form-label">Пароль:</label>
-                        <input type="password" id="pass1" name="pass1" class="form-control"
+                        <label for="password" class="form-label">Пароль:</label>
+                        <input type="password" id="password" name="password" class="form-control" value="${user.password}"
                         placeholder="Введіть пароль" required>
                     </div>
                     <div class="form-group text-center" style="margin-top: 20px">
-                        <input type="checkbox" id="remember" name="remember" valeu="yes">&nbsp;
+                        <input type="checkbox" id="remember" name="remember" value="yes">&nbsp;
                         <label for="remember" class="form-label">Залишатися в системі</label>
                     </div>
                     <p>
